@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+<style>
+body{font-family:Arial;background:#f2f2f2;padding:20px;}
+.card{background:#fff;padding:15px;margin:10px 0;}
+</style>
+</head>
+<body>
+    <div style="text-align:right; margin-bottom:20px;">
+        <a href="{% url 'logout' %}" 
+           style="padding:8px 15px; background:#eee; text-decoration:none;">
+           Logout
+        </a>
+    </div>
+    
+<h2>Admin Dashboard</h2>
+
+{% for note in notes %}
+<div class="card">
+<p>{{ note.notes }}</p>
+<p>User: {{ note.user.username }}</p>
+
+<a href="{% url 'admin_delete' note.id %}">Delete</a>
+
+</div>
+{% empty %}
+<p>No Approved Notes</p>
+{% endfor %}
+
+</body>
+</html>

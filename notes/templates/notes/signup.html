@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+    <head>
+        
+    </head>
+    <style>
+        body{
+            font-family:Arial;
+            background-color:#f2f2f2;
+
+        }
+        .box{
+            width:300px;
+            padding:40px;
+            position:absolute;
+            top:50%;
+            left:50%;
+            transform:translate(-50%,-50%);
+            background-color:#fff;
+            text-align:center;
+        }
+        input,button{
+            border:0;
+        width:100%;
+        padding:20px;
+        margin:8px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h3>signup</h3>
+        
+        <form method="post">
+          {% csrf_token %}
+          <select name="role" required>
+        
+            <option value="user">User</option>
+            <option value="manager">Manager</option>
+            <option value="admin">Admin</option>
+                 </select>
+            <input type="email" name="email" placeholder = "Email" required>
+             
+        <input type ="password" name="password"placeholder=" create password" required>
+        <input type="submit" value="signup">
+        </form>
+          <h1>
+            {% if msg %}
+            <p style="color:red;">{{ msg }}</p>
+            {% endif %}
+          </h1>
+          <h4 > if you are already have account please <a href="{% url 'login' %}">Login</a>.</h4>
+    </div>
+
+</body>
+</html>
