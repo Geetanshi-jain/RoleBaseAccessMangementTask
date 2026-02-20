@@ -72,9 +72,7 @@ graph TD
    python manage.py runserver
    ```
 
-## 🌐 Deployment
-
-For instructions on deploying to **Render** or **PythonAnywhere**, please refer to [DEPLOYMENT.md](./DEPLOYMENT.md).
+## 🌐 Deployment  live link -
 
 ---
-*Created with ❤️ by Antigravity*
+*Created with ❤️ by Geetanshi jain *
